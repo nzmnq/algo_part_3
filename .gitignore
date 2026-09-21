@@ -1,0 +1,39 @@
+# Binaries and object files
+*.obj
+*.o
+*.exe
+*.out
+*.app
+*.lib
+*.a
+*.dll
+*.so
+*.dylib
+
+# Debug and symbol files
+*.pdb
+*.idb
+*.ilk
+*.exp
+
+# Visual Studio files and directories
+.vs/
+Debug/
+Release/
+x64/
+x86/
+build/
+*.VC.db
+*.opendb
+*.suo
+*.user
+*.useroscan
+*.sln.docstates
+
+# VS Code
+.vscode/
+
+# OS generated files
+Thumbs.db
+[Dd]esktop.ini
+.DS_Store
