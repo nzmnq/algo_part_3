@@ -78,7 +78,7 @@ int arr[7] = {-2000};
 - **Task:** Find the minimum element of the array that is a multiple of 5.
 - **First element:** `500`
 - **Array size:** `8`
-- **Implementation:** [src/task_1.c](file:///c:/Users/nazar/algo_part_3/src/task_1.c)
+- **Implementation:** [src/task_1.c]
 </details>
 
 <details>
@@ -87,7 +87,7 @@ int arr[7] = {-2000};
 - **Task:** Find the index (number) of the minimum positive element of the array.
 - **First element:** `1000`
 - **Array size:** `6`
-- **Implementation:** [src/task_2.c](file:///c:/Users/nazar/algo_part_3/src/task_2.c)
+- **Implementation:** [src/task_2.c]
 </details>
 
 <details>
@@ -96,7 +96,7 @@ int arr[7] = {-2000};
 - **Task:** Find the maximum even element of the array.
 - **First element:** `-100`
 - **Array size:** `8`
-- **Implementation:** [src/task_4.c](file:///c:/Users/nazar/algo_part_3/src/task_4.c)
+- **Implementation:** [src/task_4.c]
 </details>
 
 <details>
@@ -105,7 +105,7 @@ int arr[7] = {-2000};
 - **Task:** Find the minimum odd element of the array.
 - **First element:** `201`
 - **Array size:** `7`
-- **Implementation:** [src/task_5.c](file:///c:/Users/nazar/algo_part_3/src/task_5.c)
+- **Implementation:** [src/task_5.c]
 </details>
 
 ---
