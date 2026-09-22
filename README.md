@@ -1,4 +1,5 @@
-# Algorithms and Data Structures — Laboratory Works
+#algo_part_3
+Algorithms and Data Structures — Laboratory Works
 
 Repository for C programming laboratory assignments (Part 1: "C Programming Language").
 
