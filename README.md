@@ -13,7 +13,7 @@ Each laboratory assignment is organized in its own dedicated Git branch:
 | Branch | Syllabus Source | Lab Title | Assigned Task (Variant 3) |
 | :--- | :--- | :--- | :--- |
 | **`main`** | — | Base branch | General overview and repository configuration |
-| [`lab1`](https://github.com/) | Lab №1 | Basic Variable Types & Elementary I/O | **Program 1_3, Task 3**: Calculate $\text{res} = k^2 + (g - k) / 2.3$ for `double` inputs, with formatted output (`%8.3lf`). |
+| [`lab1`](https://github.com/) | Lab №1 | Basic Variable Types & Elementary I/O | **Program 1_2, Task 3**: Simple arithmetic, relational, and ternary expressions ($a_1=6, a_2=20, a_2 /= 5, b_1 = 5 \cdot a_1 + a_2^2, \dots$). |
 | [`lab2`](https://github.com/) | Lab №4 | Arrays and Pointers | **Program 4_3, Task 3**: 1D array of size 7 ($arr[0] = -2000$); find index of maximum negative element using pointer dereferencing `*(px + i)`. |
 | [`lab3`](https://github.com/) | Lab №5 | Two-Dimensional and Dynamic Arrays | **Program 5_3, Task 3**: Array of 3 string pointers (University, Faculty, Specialty); count occurrences of letter `'e'` in the 3rd string. |
 
