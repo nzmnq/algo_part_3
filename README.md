@@ -1,63 +1,116 @@
 # Laboratory Work №3: Multi-Dimensional and Dynamic Arrays (Lab №5 from Syllabus)
 
 **Course:** Algorithms and Data Structures (Part 1: C Programming Language)  
-**Corresponding Lab in Syllabus:** **Laboratory Work №5 (Двовимірні та динамічні масиви)**  
-**Variant:** **3 (Program 5_3, Task 3)**
+**Assigned Program:** **Program 5_3 (Array of Pointers to Strings)**  
+**Variant:** **3**
 
 ---
 
 ## 🎯 Objectives
 
-- Master declaring and manipulating arrays of pointers (`char *arr[]`).
-- Understand memory allocation and structure of pointer arrays vs. 2D character arrays.
-- Practice string inspection, calculating string lengths (`strlen`), pointer memory sizes (`sizeof`), and character searching algorithms.
+- Master declaring, initializing, and using arrays of pointers to strings (`char *fi[]`).
+- Understand memory footprint: size of the pointer array (`sizeof(fi)`) vs size of individual pointer elements (`sizeof(fi[i])`).
+- Measure string lengths using `strlen()`.
+- Implement character searching and counting within strings.
 
 ---
 
-## 📋 Task Description (Variant 3)
+## 📖 Reference Program (Program 5_3)
 
-> **Source:** Program 5_3, Task 3
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-Develop a C program that performs the following:
+int main() {
+    char *fi[] = {"September", "October", "November"};
 
-1. **Array of Pointers Definition:**
-   - Define an array of **3 pointers** to strings (`char *arr[3]` or `const char *arr[3]`).
-   - The three strings must represent:
-     1. **University Name** (e.g., `"National Technical University of Ukraine"`)
-     2. **Faculty Name** (e.g., `"Faculty of Applied Mathematics"`)
-     3. **Specialty Name** (e.g., `"Software Engineering and Computer Systems"`)
-2. **Display & Size Analysis:**
-   - Print all three strings to the console.
-   - Display the memory size of the pointer array itself (`sizeof(arr)`).
-   - Display the memory size occupied by each individual pointer (`sizeof(arr[i])`).
-   - Display the character length of each string using `strlen()`.
-3. **Character Counting:**
-   - In the **third string** (Specialty Name), count the number of occurrences of the letter **`'e'`** (case-insensitive search for both `'e'` and `'E'`, or lowercase `'e'`).
-   - Print the counted number of occurrences to the console.
+    printf("%s\n%s\n%s\n\n", fi[0], fi[1], fi[2]);
 
-### Example Test Case
+    printf("Size massiv pointer = %zu\n", sizeof(fi));
+    printf("Size pointer 1 string = %zu\n", sizeof(fi[0]));
+    printf("Size pointer 2 string = %zu\n", sizeof(fi[1]));
+    printf("Size pointer 3 string = %zu\n", sizeof(fi[2]));
 
-- **Defined Strings:**
-  - `arr[0] = "National Technical University"`
-  - `arr[1] = "Faculty of Informatics"`
-  - `arr[2] = "Software Engineering"`
-- **Analysis:**
-  - In `arr[2]` ("Software Engineering"), the letter `'e'` occurs:
-    - S-o-f-t-w-a-r-**e** (1)
-    - **E**-n-g-i-n-**e**-**e**-r-i-n-g (3)
-    - Total: 4 occurrences (case-insensitive) or 3 (lowercase `'e'`).
-- **Expected Output:**
-  ```text
-  University: National Technical University
-  Faculty:    Faculty of Informatics
-  Specialty:  Software Engineering
+    puts("\nMassiv pointer string:");
+    for (int i = 0; i < 3; i++) {
+        printf("%s   %zu\n", fi[i], (size_t)strlen(fi[i]));
+    }
 
-  Size of pointer array: 24 bytes (on 64-bit system)
-  Size of single pointer: 8 bytes
-  Length of Specialty string: 20 characters
+    system("pause");
+    return 0;
+}
+```
 
-  Occurrences of letter 'e' in specialty: 4
-  ```
+---
+
+## 📋 Assigned Tasks for Program 5_3
+
+Each variant requires defining an array of 3 pointers to strings, printing them to the screen, displaying the size of the array and individual pointers via `sizeof`, measuring string lengths via `strlen`, and performing the specified character count.
+
+---
+
+### ⭐ Variant 3 — Assigned Variant
+
+> **Task:** Define an array of 3 pointers to strings with **University name, Faculty name, Specialty name**. In the third string (Specialty), count the number of occurrences of the letter **`'e'`**.
+
+- **Implementation:** [src/task_3.c](file:///c:/Users/nazar/algo_part_3/src/task_3.c)
+
+#### Example Strings:
+1. `fi[0] = "National Technical University"`
+2. `fi[1] = "Faculty of Applied Mathematics"`
+3. `fi[2] = "Software Engineering"`
+
+#### Example Output:
+```text
+National Technical University
+Faculty of Applied Mathematics
+Software Engineering
+
+Size massiv pointer = 24
+Size pointer 1 string = 8
+Size pointer 2 string = 8
+Size pointer 3 string = 8
+
+Massiv pointer string:
+National Technical University   29
+Faculty of Applied Mathematics   30
+Software Engineering   20
+
+Кількість букв 'e' у третьому рядку: 4
+```
+
+---
+
+### Other Variants for Program 5_3
+
+<details>
+<summary><b>Variant 1</b></summary>
+
+- **Task:** Define an array of 3 pointers to strings with surname, first name, and patronymic. In the first string, count the number of occurrences of the letter `'o'`.
+- **Implementation:** [src/task_1.c](file:///c:/Users/nazar/algo_part_3/src/task_1.c)
+</details>
+
+<details>
+<summary><b>Variant 2</b></summary>
+
+- **Task:** Define an array of 3 pointers to strings with country, city, and street name. In the third string, count the number of occurrences of the letter `'a'`.
+- **Implementation:** [src/task_2.c](file:///c:/Users/nazar/algo_part_3/src/task_2.c)
+</details>
+
+<details>
+<summary><b>Variant 4</b></summary>
+
+- **Task:** Define an array of 3 pointers to strings with continent, country, and capital. In the third string, count the number of occurrences of the letter `'o'`.
+- **Implementation:** [src/task_4.c](file:///c:/Users/nazar/algo_part_3/src/task_4.c)
+</details>
+
+<details>
+<summary><b>Variant 5</b></summary>
+
+- **Task:** Define an array of 3 pointers to strings with book title, chapter, and paragraph. In the second string, count the number of occurrences of the letter `'c'`.
+- **Implementation:** [src/task_5.c](file:///c:/Users/nazar/algo_part_3/src/task_5.c)
+</details>
 
 ---
 
@@ -85,21 +138,25 @@ Develop a C program that performs the following:
 
 ---
 
-## 📁 Project Structure
+## 📁 Repository File Structure
 
 ```text
 .
 ├── README.md       # Laboratory guidelines and assignment description
 └── src/
-    └── main.c      # Source code template for Task 5_3 (Variant 3)
+    ├── task_1.c    # Variant 1: Surname, name, patronymic; count 'o' in 1st string
+    ├── task_2.c    # Variant 2: Country, city, street; count 'a' in 3rd string
+    ├── task_3.c    # Variant 3: University, faculty, specialty; count 'e' in 3rd string
+    ├── task_4.c    # Variant 4: Continent, country, capital; count 'o' in 3rd string
+    └── task_5.c    # Variant 5: Book, chapter, paragraph; count 'c' in 2nd string
 ```
 
 ## 🔨 Compilation & Execution
 
 ```bash
-# Compile
-gcc -std=c11 -Wall -Wextra src/main.c -o lab3
+# Compile Variant 3
+gcc -std=c11 -Wall -Wextra src/task_3.c -o task3
 
 # Run
-./lab3
+./task3
 ```
