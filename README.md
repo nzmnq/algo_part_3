@@ -1,8 +1,8 @@
 # Laboratory Work №2: Arrays and Pointers (Lab №4 from Syllabus)
 
 **Course:** Algorithms and Data Structures (Part 1: C Programming Language)  
-**Corresponding Lab in Syllabus:** **Laboratory Work №4 (Масиви і покажчики)**  
-**Variant:** **3 (Program 4_3, Task 3)**
+**Assigned Program:** **Program 4_3 (Pointer Dereferencing with 1D Arrays)**  
+**Variant:** **3 (Task 3)**
 
 ---
 
@@ -15,43 +15,98 @@
 
 ---
 
-## 📋 Task Description (Variant 3)
+## 📖 Reference Program (Program 4_3)
 
-> **Source:** Program 4_3, Task 3
+```c
+#include <stdio.h>
+#include <stdlib.h>
 
-Develop a C program that performs the following:
+int main() {
+    int arr[10] = {5, 3, 2, -4, 6, 7, 110, -17, 0, 13}, max, i = 0;
+    int *px = arr; // визначення покажчика типу int на масив
+    max = *px;     // привласнення max значення нульового елемента масиву
+    while (i < 10) {
+        if (*(px + i) > max) max = *(px + i);
+        i++;
+    }
+    printf("max=%d\n", max);
+    system("pause");
+    return 0;
+}
+```
 
-1. **Array Definition & Size:**
-   - Define a 1-dimensional array of integers of size **7** (`int arr[7]`).
-2. **Initialization & Input:**
-   - Pre-define the first element to **-2000**:
-     $$arr[0] = -2000$$
-   - Read the remaining 6 elements (`arr[1]` through `arr[6]`) from the keyboard using `scanf()`.
-3. **Pointer Access & Search:**
-   - Declare a pointer `int *px = arr;` pointing to the beginning of the array.
-   - Using **only pointer dereferencing** (i.e. `*(px + i)` instead of array indexing `arr[i]`), find the **index (position) of the maximum negative element** in the array (i.e., the negative number closest to zero, e.g. $-5 > -20$).
-4. **Output:**
-   - Print all elements of the array along with their indices.
-   - Print the index (position) and the value of the maximum negative element found.
+---
 
-### Example Test Case
+## 📋 Assigned Tasks for Program 4_3
 
-- **Array elements:** `arr = [-2000, 15, -42, 8, -7, 0, -13]`
-  - Negative elements present: `-2000` (idx 0), `-42` (idx 2), `-7` (idx 4), `-13` (idx 6)
-  - Maximum negative value: `-7` at index `4`
-- **Output:**
-  ```text
-  Array:
-  arr[0] = -2000
-  arr[1] = 15
-  arr[2] = -42
-  arr[3] = 8
-  arr[4] = -7
-  arr[5] = 0
-  arr[6] = -13
+For each task:
+- The first element of the array is pre-defined in the program.
+- All remaining elements are entered from the keyboard.
+- All element access during calculations must be performed using **pointer dereferencing** (`*(px + i)`).
+- Output the array elements and calculation results.
 
-  Maximum negative element: arr[4] = -7 (index 4)
-  ```
+---
+
+### ⭐ Variant 3 (Task 3) — Assigned Variant
+
+> **Task:** Find the index (number) of the **maximum negative element** in the array.  
+> **First element:** `-2000`  
+> **Array size:** `7`
+
+```c
+int arr[7] = {-2000};
+```
+
+1. Read the remaining 6 elements from the keyboard via pointer `px + i`.
+2. Print all elements of the array.
+3. Using pointer dereferencing, find the index of the maximum negative element ($x < 0$ closest to zero).
+4. Output the index and value found.
+
+#### Example Test Case:
+- **Input (6 numbers):** `-100`, `-50`, `20`, `-5`, `10`, `-30`
+- **Full Array:** `[-2000, -100, -50, 20, -5, 10, -30]`
+- **Negative Elements:** `-2000` (idx 0), `-100` (idx 1), `-50` (idx 2), `-5` (idx 4), `-30` (idx 6)
+- **Result:** Maximum negative element is `arr[4] = -5` (index 4).
+
+---
+
+### Other Tasks for Program 4_3
+
+<details>
+<summary><b>Task 1</b></summary>
+
+- **Task:** Find the minimum element of the array that is a multiple of 5.
+- **First element:** `500`
+- **Array size:** `8`
+- **Implementation:** [src/task_1.c](file:///c:/Users/nazar/algo_part_3/src/task_1.c)
+</details>
+
+<details>
+<summary><b>Task 2</b></summary>
+
+- **Task:** Find the index (number) of the minimum positive element of the array.
+- **First element:** `1000`
+- **Array size:** `6`
+- **Implementation:** [src/task_2.c](file:///c:/Users/nazar/algo_part_3/src/task_2.c)
+</details>
+
+<details>
+<summary><b>Task 4</b></summary>
+
+- **Task:** Find the maximum even element of the array.
+- **First element:** `-100`
+- **Array size:** `8`
+- **Implementation:** [src/task_4.c](file:///c:/Users/nazar/algo_part_3/src/task_4.c)
+</details>
+
+<details>
+<summary><b>Task 5</b></summary>
+
+- **Task:** Find the minimum odd element of the array.
+- **First element:** `201`
+- **Array size:** `7`
+- **Implementation:** [src/task_5.c](file:///c:/Users/nazar/algo_part_3/src/task_5.c)
+</details>
 
 ---
 
@@ -85,21 +140,25 @@ Develop a C program that performs the following:
 
 ---
 
-## 📁 Project Structure
+## 📁 Repository File Structure
 
 ```text
 .
 ├── README.md       # Laboratory guidelines and assignment description
 └── src/
-    └── main.c      # Source code template for Task 4_3 (Variant 3)
+    ├── task_1.c    # Task 1: Min element multiple of 5 (size 8, arr[0]=500)
+    ├── task_2.c    # Task 2: Index of min positive element (size 6, arr[0]=1000)
+    ├── task_3.c    # Task 3: Index of max negative element (size 7, arr[0]=-2000) [Variant 3]
+    ├── task_4.c    # Task 4: Max even element (size 8, arr[0]=-100)
+    └── task_5.c    # Task 5: Min odd element (size 7, arr[0]=201)
 ```
 
 ## 🔨 Compilation & Execution
 
 ```bash
-# Compile
-gcc -std=c11 -Wall -Wextra src/main.c -o lab2
+# Compile Variant 3 (Task 3)
+gcc -std=c11 -Wall -Wextra src/task_3.c -o task3
 
 # Run
-./lab2
+./task3
 ```
