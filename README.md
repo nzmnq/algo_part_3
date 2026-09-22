@@ -2,7 +2,7 @@
 
 **Course:** Algorithms and Data Structures (Part 1: C Programming Language)  
 **Assigned Program:** **Program 1_2 (Arithmetic, Logical, and Relational Expressions)**  
-**Variant:** **3 (Task 3)**
+**Variant:** **2**
 
 ---
 
@@ -47,7 +47,7 @@ int main() {
 
 Each task requires implementing the specified sequence of expressions and explaining every result with comments.
 
-### ⭐ Variant 3 (Task 3) — Assigned Variant
+### ⭐ Variant 2 — Assigned Variant
 
 ```c
 a1 = 6;
@@ -62,7 +62,7 @@ r1 = f1 + 4 * f2;
 r2 = (f1 >= f2) ? f1 - 2.5 : f2 + 5.2;
 ```
 
-#### Step-by-Step Explanation of Variant 3:
+#### Step-by-Step Explanation of Variant 2:
 
 1. **`a2 /= 5;`**
    - Compound division assignment.
@@ -84,7 +84,7 @@ r2 = (f1 >= f2) ? f1 - 2.5 : f2 + 5.2;
    - Evaluates false branch: $f_2 + 5.2 = 3.5 + 5.2 = 8.70$.
    - $r_2 = 8.70$.
 
-#### Expected Output for Variant 3:
+#### Expected Output for Variant 2:
 ```text
 Integer results (Task 3 / Variant 3):
 a1 = 6, a2 = 4, b1 = 46, b2 = 0, b3 = 0
