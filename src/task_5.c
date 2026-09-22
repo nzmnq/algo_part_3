@@ -1,15 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 int main() {
-    double x, z, h;
+    int a1 = 5, a2 = 13, b1, b2, b3;
+    a2 -= a1 + 5; // a2=13-(5+5)=13-10=3
+    b1 = a1 + a2 * a2; // b1=5+3^2=5+9=14
+    b2 = a1 > a2; // b2=(5>3) ? так 1
+    printf("b2=%d\n", b2);
+    b3 = b2++; // b3=1, b2=1+1=2
+    printf("a1=%d a2=%d b1=%d b2=%d b3=%d\n", a1, a2, b1, b2, b3);
 
-    puts("Input x, z, h");
-    scanf("%lf %lf %lf", &x, &z, &h);
-
-    double res = pow(x, 3) + z / pow(h, 2);
-    printf("x=%7.3lf, z=%7.3lf, h=%7.3lf res=%7.3lf\n", x, z, h, res);
+    float f1 = 4.5, f2 = 1.8, r1, r2;
+    r1 = f1 + f2 / 2; // r1=4.5+1.8/2=4.5+0.9=5.4
+    r2 = (f1 > f2) ? f1 + 1.2 : f2 - 1.4; // r2=(4.5>1.8)? так 4.5+1.2=5.7
+    printf("r1=%5.2f r2=%5.2f\n", r1, r2);
 
     system("pause");
     return 0;
