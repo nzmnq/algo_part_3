@@ -2,28 +2,34 @@
 #include <stdlib.h>
 
 int main() {
-    int arr[8] = {500}; // перший елемент дорівнює 500
-    int *px = arr;      // покажчик на масив
-    int i;
+    int arr[8] = {500};
+    int *px = arr;
+    int i = 1;
 
-    puts("Введіть 7 цілих чисел:");
-    for (i = 1; i < 8; i++) {
-        scanf("%d", px + i); // введення через покажчик
+    printf("Введіть 7 елементів масиву:\n");
+    while (i < 8) {
+        scanf("%d", px + i);
+        i++;
     }
 
-    puts("\nМасив:");
-    for (i = 0; i < 8; i++) {
-        printf("arr[%d] = %d\n", i, *(px + i));
+    printf("\nМасив:\n");
+    i = 0;
+    while (i < 8) {
+        printf("arr[%d]=%d\n", i, *(px + i));
+        i++;
     }
 
-    int min = *px; // початковий мінімум (500 кратне 5)
-    for (i = 1; i < 8; i++) {
+    int min = *px; // беремо перший елемент за початковий мінімум
+    i = 1;         // перевірку починаємо з наступного
+
+    while (i < 8) {
         if (*(px + i) % 5 == 0 && *(px + i) < min) {
-            min = *(px + i); // знайдено менший елемент кратний 5
+            min = *(px + i);
         }
+        i++;
     }
 
-    printf("\nМінімальний елемент кратний 5: %d\n", min);
+    printf("min=%d\n", min);
     system("pause");
     return 0;
 }

@@ -2,28 +2,34 @@
 #include <stdlib.h>
 
 int main() {
-    int arr[8] = {-100}; // перший елемент дорівнює -100
-    int *px = arr;       // покажчик на масив
-    int i;
+    int arr[8] = {-100};
+    int *px = arr;
+    int i = 1;
 
-    puts("Введіть 7 цілих чисел:");
-    for (i = 1; i < 8; i++) {
-        scanf("%d", px + i); // введення через покажчик
+    printf("Введіть 7 елементів масиву:\n");
+    while (i < 8) {
+        scanf("%d", px + i);
+        i++;
     }
 
-    puts("\nМасив:");
-    for (i = 0; i < 8; i++) {
-        printf("arr[%d] = %d\n", i, *(px + i));
+    printf("\nМасив:\n");
+    i = 0;
+    while (i < 8) {
+        printf("arr[%d]=%d\n", i, *(px + i));
+        i++;
     }
 
-    int max_even = *px; // початковий максимум серед парних (-100 парне)
-    for (i = 1; i < 8; i++) {
-        if (*(px + i) % 2 == 0 && *(px + i) > max_even) {
-            max_even = *(px + i); // знайдено більший парний елемент
+    int max = *px; // беремо перший елемент за початковий максимум
+    i = 1;         // перевірку починаємо з наступного
+
+    while (i < 8) {
+        if (*(px + i) % 2 == 0 && *(px + i) > max) {
+            max = *(px + i);
         }
+        i++;
     }
 
-    printf("\nМаксимальний парний елемент: %d\n", max_even);
+    printf("max=%d\n", max);
     system("pause");
     return 0;
 }

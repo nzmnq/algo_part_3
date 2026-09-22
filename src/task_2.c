@@ -2,31 +2,36 @@
 #include <stdlib.h>
 
 int main() {
-    int arr[6] = {1000}; // перший елемент дорівнює 1000
-    int *px = arr;       // покажчик на масив
-    int i;
+    int arr[6] = {1000};
+    int *px = arr;
+    int i = 1;
 
-    puts("Введіть 5 цілих чисел:");
-    for (i = 1; i < 6; i++) {
-        scanf("%d", px + i); // введення через покажчик
+    printf("Введіть 5 елементів масиву:\n");
+    while (i < 6) {
+        scanf("%d", px + i);
+        i++;
     }
 
-    puts("\nМасив:");
-    for (i = 0; i < 6; i++) {
-        printf("arr[%d] = %d\n", i, *(px + i));
+    printf("\nМасив:\n");
+    i = 0;
+    while (i < 6) {
+        printf("arr[%d]=%d\n", i, *(px + i));
+        i++;
     }
 
-    int min_val = *px; // початкове мінімальне додатне значення
-    int min_idx = 0;   // номер (індекс) першого елемента
+    int min = *px; // беремо перший елемент за початковий мінімум
+    int min_idx = 0;
+    i = 1;         // перевірку починаємо з наступного
 
-    for (i = 1; i < 6; i++) {
-        if (*(px + i) > 0 && *(px + i) < min_val) {
-            min_val = *(px + i); // нове мінімальне додатне
-            min_idx = i;         // номер елемента
+    while (i < 6) {
+        if (*(px + i) > 0 && *(px + i) < min) {
+            min = *(px + i);
+            min_idx = i;
         }
+        i++;
     }
 
-    printf("\nНомер мінімального додатного елемента: arr[%d] = %d\n", min_idx, min_val);
+    printf("Номер мінімального додатного елемента: arr[%d]=%d\n", min_idx, min);
     system("pause");
     return 0;
 }

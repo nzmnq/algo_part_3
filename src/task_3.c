@@ -2,31 +2,36 @@
 #include <stdlib.h>
 
 int main() {
-    int arr[7] = {-2000}; // перший елемент дорівнює -2000
-    int *px = arr;        // покажчик на масив
-    int i;
+    int arr[7] = {-2000};
+    int *px = arr;
+    int i = 1;
 
-    puts("Введіть 6 цілих чисел:");
-    for (i = 1; i < 7; i++) {
-        scanf("%d", px + i); // введення через покажчик
+    printf("Введіть 6 елементів масиву:\n");
+    while (i < 7) {
+        scanf("%d", px + i);
+        i++;
     }
 
-    puts("\nМасив:");
-    for (i = 0; i < 7; i++) {
-        printf("arr[%d] = %d\n", i, *(px + i));
+    printf("\nМасив:\n");
+    i = 0;
+    while (i < 7) {
+        printf("arr[%d]=%d\n", i, *(px + i));
+        i++;
     }
 
-    int max_neg = *px; // початковий максимальний від'ємний (-2000)
-    int max_idx = 0;   // номер (індекс) першого елемента
+    int max = *px; // беремо перший елемент за початковий максимум
+    int max_idx = 0;
+    i = 1;         // перевірку починаємо з наступного
 
-    for (i = 1; i < 7; i++) {
-        if (*(px + i) < 0 && *(px + i) > max_neg) {
-            max_neg = *(px + i); // знайдено більший від'ємний елемент
-            max_idx = i;         // номер елемента
+    while (i < 7) {
+        if (*(px + i) < 0 && *(px + i) > max) {
+            max = *(px + i);
+            max_idx = i;
         }
+        i++;
     }
 
-    printf("\nНомер максимального від'ємного елемента: arr[%d] = %d\n", max_idx, max_neg);
+    printf("Номер максимального від'ємного елемента: arr[%d]=%d\n", max_idx, max);
     system("pause");
     return 0;
 }

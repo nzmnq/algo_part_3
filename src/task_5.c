@@ -2,28 +2,34 @@
 #include <stdlib.h>
 
 int main() {
-    int arr[7] = {201}; // перший елемент дорівнює 201
-    int *px = arr;      // покажчик на масив
-    int i;
+    int arr[7] = {201};
+    int *px = arr;
+    int i = 1;
 
-    puts("Введіть 6 цілих чисел:");
-    for (i = 1; i < 7; i++) {
-        scanf("%d", px + i); // введення через покажчик
+    printf("Введіть 6 елементів масиву:\n");
+    while (i < 7) {
+        scanf("%d", px + i);
+        i++;
     }
 
-    puts("\nМасив:");
-    for (i = 0; i < 7; i++) {
-        printf("arr[%d] = %d\n", i, *(px + i));
+    printf("\nМасив:\n");
+    i = 0;
+    while (i < 7) {
+        printf("arr[%d]=%d\n", i, *(px + i));
+        i++;
     }
 
-    int min_odd = *px; // початковий мінімум серед непарних (201 непарне)
-    for (i = 1; i < 7; i++) {
-        if (*(px + i) % 2 != 0 && *(px + i) < min_odd) {
-            min_odd = *(px + i); // знайдено менший непарний елемент
+    int min = *px; // беремо перший елемент за початковий мінімум
+    i = 1;         // перевірку починаємо з наступного
+
+    while (i < 7) {
+        if (*(px + i) % 2 != 0 && *(px + i) < min) {
+            min = *(px + i);
         }
+        i++;
     }
 
-    printf("\nМінімальний непарний елемент: %d\n", min_odd);
+    printf("min=%d\n", min);
     system("pause");
     return 0;
 }
