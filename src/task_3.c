@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
     int a1 = 6, a2 = 20, b1, b2, b3;
@@ -15,6 +14,5 @@ int main() {
     r2 = (f1 >= f2) ? f1 - 2.5 : f2 + 5.2; // r2=(1.5>=3.5)? ні 3.5+5.2=8.7
     printf("r1=%5.2f r2=%5.2f\n", r1, r2);
 
-    system("pause");
     return 0;
 }
