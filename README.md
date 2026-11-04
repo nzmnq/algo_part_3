@@ -1,162 +1,92 @@
-# Laboratory Work №3: Multi-Dimensional and Dynamic Arrays (Lab №5 from Syllabus)
+# Лабораторна робота №5: Двовимірні масиви й функції (Комп’ютерний практикум 7, Розділ 8)
 
-**Course:** Algorithms and Data Structures (Part 1: C Programming Language)  
-**Assigned Program:** **Program 5_3 (Array of Pointers to Strings)**  
-**Variant:** **3**
-
----
-
-## 🎯 Objectives
-
-- Master declaring, initializing, and using arrays of pointers to strings (`char *fi[]`).
-- Understand memory footprint: size of the pointer array (`sizeof(fi)`) vs size of individual pointer elements (`sizeof(fi[i])`).
-- Measure string lengths using `strlen()`.
-- Implement character searching and counting within strings.
+**Дисципліна:** Алгоритмізація та програмування, частина 3  
+**Тема:** Двовимірні масиви й функції  
+**Варіант:** 8  
+**Студент:** Доскочинський Н. С. (гр. ІР-22)  
+**Викладач:** Сиротюк С. В.  
 
 ---
 
-## 📖 Reference Program (Program 5_3)
+## 🎯 Мета роботи
 
-```c
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-int main() {
-    char *fi[] = {"September", "October", "November"};
-
-    printf("%s\n%s\n%s\n\n", fi[0], fi[1], fi[2]);
-
-    printf("Size massiv pointer = %zu\n", sizeof(fi));
-    printf("Size pointer 1 string = %zu\n", sizeof(fi[0]));
-    printf("Size pointer 2 string = %zu\n", sizeof(fi[1]));
-    printf("Size pointer 3 string = %zu\n", sizeof(fi[2]));
-
-    puts("\nMassiv pointer string:");
-    for (int i = 0; i < 3; i++) {
-        printf("%s   %zu\n", fi[i], (size_t)strlen(fi[i]));
-    }
-
-    system("pause");
-    return 0;
-}
-```
+- Опанувати принципи створення, ініціалізації та комплексної обробки двовимірних масивів (матриць) у мові програмування С++.
+- Засвоїти механізм передачі багатовимірних масивів у користувацькі функції через покажчики з фіксацією границі другого виміру (`int u[][NUM]`).
+- Реалізувати алгоритми:
+  1. генерації випадкової матриці цілих чисел;
+  2. форматованого табличного виведення матриці на екран;
+  3. лінійного пошуку найменшого елемента у заданому рядку;
+  4. циклічного зсуву елементів рядка вліво на кількість позицій, рівну знайденому мінімуму.
+- Дослідити організацію збереження елементів двовимірного масиву в оперативній пам'яті комп'ютера.
 
 ---
 
-## 📋 Assigned Tasks for Program 5_3
+## 📋 Варіант завдання (Варіант 8)
 
-Each variant requires defining an array of 3 pointers to strings, printing them to the screen, displaying the size of the array and individual pointers via `sizeof`, measuring string lengths via `strlen`, and performing the specified character count.
+> **Умова:** Заповнити квадратну матрицю випадковими числами (функція). Написати функцію для пошуку мінімального елемента в зазначеному рядку. Зрушити елементи цього рядка циклічно вліво на кількість елементів, рівну мінімальному елементу рядка. Вивести вихідну й отриману матриці на екран (функція).
 
----
-
-### ⭐ Variant 3 — Assigned Variant
-
-> **Task:** Define an array of 3 pointers to strings with **University name, Faculty name, Specialty name**. In the third string (Specialty), count the number of occurrences of the letter **`'e'`**.
-
-- **Implementation:** [src/task_3.c](file:///c:/Users/nazar/algo_part_3/src/task_3.c)
-
-#### Example Strings:
-1. `fi[0] = "National Technical University"`
-2. `fi[1] = "Faculty of Applied Mathematics"`
-3. `fi[2] = "Software Engineering"`
-
-#### Example Output:
-```text
-National Technical University
-Faculty of Applied Mathematics
-Software Engineering
-
-Size massiv pointer = 24
-Size pointer 1 string = 8
-Size pointer 2 string = 8
-Size pointer 3 string = 8
-
-Massiv pointer string:
-National Technical University   29
-Faculty of Applied Mathematics   30
-Software Engineering   20
-
-Кількість букв 'e' у третьому рядку: 4
-```
+### Параметри завдання:
+- **Розмірність матриці:** квадратна матриця $5 \times 5$ (`#define NUM 5`).
+- **Діапазон випадкових чисел:** від 1 до 9 (`rand() % 9 + 1`).
+- **Вибір рядка:** інтерактивне введення користувачем з перевіркою коректності меж ($1 \le row \le 5$).
+- **Параметр зсуву:** циклічний зсув обраного рядка вліво на $k = \min(row)$ позицій.
 
 ---
 
-### Other Variants for Program 5_3
+## 💻 Модульна структура програми ([src/main.cpp](file:///Users/nazardoskochynskyy/algo_part_3/src/main.cpp))
 
-<details>
-<summary><b>Variant 1</b></summary>
-
-- **Task:** Define an array of 3 pointers to strings with surname, first name, and patronymic. In the first string, count the number of occurrences of the letter `'o'`.
-- **Implementation:** [src/task_1.c](file:///c:/Users/nazar/algo_part_3/src/task_1.c)
-</details>
-
-<details>
-<summary><b>Variant 2</b></summary>
-
-- **Task:** Define an array of 3 pointers to strings with country, city, and street name. In the third string, count the number of occurrences of the letter `'a'`.
-- **Implementation:** [src/task_2.c](file:///c:/Users/nazar/algo_part_3/src/task_2.c)
-</details>
-
-<details>
-<summary><b>Variant 4</b></summary>
-
-- **Task:** Define an array of 3 pointers to strings with continent, country, and capital. In the third string, count the number of occurrences of the letter `'o'`.
-- **Implementation:** [src/task_4.c](file:///c:/Users/nazar/algo_part_3/src/task_4.c)
-</details>
-
-<details>
-<summary><b>Variant 5</b></summary>
-
-- **Task:** Define an array of 3 pointers to strings with book title, chapter, and paragraph. In the second string, count the number of occurrences of the letter `'c'`.
-- **Implementation:** [src/task_5.c](file:///c:/Users/nazar/algo_part_3/src/task_5.c)
-</details>
+- `void fillMatrix(int u[][NUM], int n)` — заповнення квадратної матриці випадковими цілими числами від 1 до 9;
+- `void displayMatrix(int u[][NUM], int n)` — екранне виведення матриці у вигляді таблиці з розділювачами табуляції;
+- `int findMinInRow(int u[][NUM], int n, int row)` — алгоритм лінійного пошуку мінімального елемента у рядку;
+- `void shiftRowLeft(int u[][NUM], int n, int row, int k)` — виконання циклічного зсуву елементів рядка вліво на $k$ позицій через буферну змінну `work`;
+- `int main()` — координація введення даних, виклику функцій та демонстрації проміжних і результуючих матриць.
 
 ---
 
-## ❓ Control Questions
-
-1. What is a multi-dimensional array? How are elements of multi-dimensional arrays laid out in physical computer memory (row-major order)?
-2. Provide examples of complete and partial explicit initialization of a two-dimensional array of size $2 \times 3$ with integer elements (`int`).
-3. Determine and explain the output of the following program:
-   ```c
-   #include <stdio.h>
-   void main()
-   {
-       char m[2][3] = {{1, 5, 7}, {2, 6, 8}};
-       char *pm = m[0];
-       printf("%d %d %d %d\n", **(m+1), *(*(m+1)+1), *pm+2, *(pm+2));
-       printf("%d %d\n", sizeof(m), sizeof(m[0]));
-       printf("%d %d\n", sizeof(m[0][0]), sizeof(pm));
-   }
-   ```
-4. What is an array of pointers? Give an example demonstrating explicit complete initialization of such an array.
-5. What is a dynamic array? In what fundamental ways does it differ from a fixed-size (static or automatic) array?
-6. Write a C++ code snippet to dynamically allocate a 10-element array of type `double` using the `new` operator, verify that the allocation was successful, fill it with pseudo-random numbers, and properly release the memory using `delete[]`.
-7. Write a C code snippet to dynamically allocate a 20-element array of type `long` using `malloc()`, check for allocation success, populate it from user input, and release the memory using `free()`.
-8. Write a C++ code snippet to dynamically allocate a $4 \times 5$ matrix of `float` elements using `new`, assign random numbers from -50.00 to +50.00, and free the allocated memory.
-
----
-
-## 📁 Repository File Structure
+## 📊 Результати виконання програми
 
 ```text
-.
-├── README.md       # Laboratory guidelines and assignment description
-└── src/
-    ├── task_1.c    # Variant 1: Surname, name, patronymic; count 'o' in 1st string
-    ├── task_2.c    # Variant 2: Country, city, street; count 'a' in 3rd string
-    ├── task_3.c    # Variant 3: University, faculty, specialty; count 'e' in 3rd string
-    ├── task_4.c    # Variant 4: Continent, country, capital; count 'o' in 3rd string
-    └── task_5.c    # Variant 5: Book, chapter, paragraph; count 'c' in 2nd string
+nazar@mac algo_part_3 % ./main
+Вихідна матриця (5x5):
+5    8    9    6    2
+4    2    7    4    3
+5    4    5    4    6
+1    8    8    3    3
+3    4    3    9    5
+
+Введіть номер рядку для обробки (1-5): 2
+Мінімальний елемент рядку 2: 2
+
+Отримана матриця після зсуву 2 вліво на 2 ел.:
+5    8    9    6    2
+7    4    3    4    2
+5    4    5    4    6
+1    8    8    3    3
+3    4    3    9    5
 ```
 
-## 🔨 Compilation & Execution
+### Аналіз стану рядків матриці:
+
+| Елемент | Вихідні значення | Мінімум | Параметр зсуву | Результуючі значення | Статус обробки |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **Рядок 1** | 5, 8, 9, 6, 2 | — | — | 5, 8, 9, 6, 2 | Без змін |
+| **Рядок 2 (обраний)** | **4, 2, 7, 4, 3** | **2** | **2 (вліво)** | **7, 4, 3, 4, 2** | **Виконано циклічний зсув на 2 поз.** |
+| **Рядок 3** | 5, 4, 5, 4, 6 | — | — | 5, 4, 5, 4, 6 | Без змін |
+| **Рядок 4** | 1, 8, 8, 3, 3 | — | — | 1, 8, 8, 3, 3 | Без змін |
+| **Рядок 5** | 3, 4, 3, 9, 5 | — | — | 3, 4, 3, 9, 5 | Без змін |
+
+---
+
+## 🛠 Компіляція та запуск
 
 ```bash
-# Compile Variant 3
-gcc -std=c11 -Wall -Wextra src/task_3.c -o task3
-
-# Run
-./task3
+clang++ -Wall -Wextra src/main.cpp -o main
+./main
 ```
+
+---
+
+## 📄 Файл звіту
+
+Оформлений звіт з лабораторної роботи №5 у форматі Microsoft Word відповідно до академічних вимог:  
+- **[Звіт_Лабораторна_робота_5.docx](file:///Users/nazardoskochynskyy/algo_part_3/Звіт_Лабораторна_робота_5.docx)**
