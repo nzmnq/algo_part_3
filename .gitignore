@@ -1,4 +1,5 @@
 # Binaries and object files
+main
 *.obj
 *.o
 *.exe
