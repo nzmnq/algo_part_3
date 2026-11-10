@@ -39,3 +39,7 @@ Thumbs.db
 [Dd]esktop.ini
 .DS_Store
 scratch/
+
+# Cargo
+target/
+Cargo.lock
